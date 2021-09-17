@@ -24,10 +24,10 @@ def home():
 
     NOTION_PAGE_ID = request.cookies.get('NotionPageID') # store list of notion_page_id #jsonify if neccesary
     if not NOTION_PAGE_ID:
-      return redirect("/searchpages")
+      return redirect(url_for("notion_admin.searchpages"))
     if NOTION_API_KEY and NOTION_PAGE_ID:
 
-      return redirect(url_for('add_viewer'))
+      return redirect(url_for('notion_admin.add_viewer'))
 
       # list all the pages that were added
       # click on page to go tot the page in notion # with newtab
