@@ -59,7 +59,7 @@ def add_viewer():
 
   NOTION_TOKEN = request.cookies.get('NotionAPIKey')
   page_id = request.cookies.get('NotionPageID')
-  embed_url = URL(request.base_url).with_path(f'viewer/{page_id}')
+  embed_url = str(URL(request.base_url).with_path(f'viewer/{page_id}'))
 
 
   notion = notional.connect(auth=NOTION_TOKEN)
